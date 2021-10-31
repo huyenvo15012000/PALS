@@ -12,16 +12,16 @@ import java.util.List;
 @RequestMapping(path = "/employees")
 public interface EmployeesController {
     @GetMapping
-    public ResponseEntity<List<EmployeeResponseDTO>> getAllEmployees();
+    ResponseEntity<List<EmployeeResponseDTO>> getAllEmployees();
 
     @PostMapping(path = "/createnewemployee")
-    public ResponseEntity<List<EmployeeResponseDTO>> createEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO);
+    ResponseEntity<List<EmployeeResponseDTO>> createEmployee(@RequestBody EmployeeRequestDTO employeeRequestDTO);
 
     @PutMapping(path = "/employees/{id}")
-    public ResponseEntity<EmployeeResponseDTO> updateEmployee(@PathVariable ("id") long id,
+    ResponseEntity<EmployeeResponseDTO> updateEmployee(@PathVariable ("id") long id,
                                                               @RequestBody EmployeeRequestDTO employee);
 
     @DeleteMapping(path = "/employee/{id}")
-    public ResponseEntity<DeleteResponseMessage> deleteEmployee(@PathVariable ("id") long id);
+    ResponseEntity<DeleteResponseMessage> deleteEmployee(@PathVariable ("id") long id);
 
 }
