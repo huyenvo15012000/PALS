@@ -1,5 +1,6 @@
 package com.example.pals.entities;
 
+import com.example.pals.entities.enums.Gender;
 import com.example.pals.entities.enums.Position;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -50,4 +51,7 @@ public class Tutor {
     @NotNull
     @Column
     Date dayLeave;
+
+    @Enumerated
+    Gender gender;
 }

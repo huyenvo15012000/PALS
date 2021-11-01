@@ -1,5 +1,6 @@
 package com.example.pals.entities;
 
+import com.example.pals.entities.enums.Gender;
 import com.example.pals.entities.enums.Position;
 import lombok.*;
 import org.hibernate.validator.constraints.NotBlank;
@@ -52,4 +53,10 @@ public class Employee {
     Long salary;
     @Enumerated(EnumType.STRING)
     Position position;
+
+    @Column(unique = true)
+    String CMND;
+
+    @Enumerated
+    Gender gender;
 }

@@ -1,5 +1,6 @@
 package com.example.pals.entities;
 
+import com.example.pals.entities.enums.Gender;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,7 +17,7 @@ import java.util.Date;
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    protected Long id;
+    Long id;
 
     @NotNull
     @Column
@@ -51,4 +52,10 @@ public class Student {
     Date dayLeave;
     String motherName;
     String fatherName;
+
+    @Column(unique = true)
+    String CMND;
+
+    @Enumerated
+    Gender gender;
 }
